@@ -1,13 +1,10 @@
 import requests
+import json
 
-username = "torvalds"
-
-url = f"https://api.github.com/users/{username}"
+url = f"https://api.openf1.org/v1/sessions?country_name=Belgium"
 
 response = requests.get(url)
 
 data = response.json()
 
-print("Name:", data["name"])
-print("Public repos:", data["public_repos"])
-print("Followers:", data["followers"])
+print(data[2])
