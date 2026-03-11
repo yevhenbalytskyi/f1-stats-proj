@@ -1,10 +1,10 @@
 import requests
-import json
+import psycopg2
 
-url = f"https://api.openf1.org/v1/sessions?country_name=Belgium"
+SESSION_KEY = 9140
 
-response = requests.get(url)
+laps = requests.get(
+    f"https://api.openf1.org/v1/laps?session_key={SESSION_KEY}"
+).json()
 
-data = response.json()
-
-print(data[2])
+print(laps)
