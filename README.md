@@ -120,4 +120,4 @@ Data is stored locally before analysis.
 
 3. **Small modules**
 
-If a file becomes large, split it into smaller modules.
+If a file becomes large (more than 200 lines), split it into smaller modules.
