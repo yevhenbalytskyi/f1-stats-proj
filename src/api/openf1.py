@@ -3,13 +3,13 @@ import requests
 BASE_URL = "https://api.openf1.org/v1"
 
 
-def get_meetings(year: int):
-    url = f"{BASE_URL}/meetings?year={year}"
+def get_meetings():
+    url = f"{BASE_URL}/meetings"
     return requests.get(url).json()
 
 
-def get_sessions(year: int):
-    url = f"{BASE_URL}/sessions?year={year}"
+def get_sessions():
+    url = f"{BASE_URL}/sessions"
     return requests.get(url).json()
 
 

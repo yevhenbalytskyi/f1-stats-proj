@@ -3,13 +3,11 @@ from db.connection import get_connection
 from db.repositories import insert_meeting
 import json
 
-def ingest_meetings(year):
-    meetings = get_meetings(year)
+def ingest_meetings():
+    meetings = get_meetings()
 
     conn = get_connection()
     cur = conn.cursor()
-
-    
 
     for meeting in meetings:
         insert_meeting(cur, meeting)

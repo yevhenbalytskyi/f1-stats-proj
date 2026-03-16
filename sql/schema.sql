@@ -15,3 +15,15 @@ CREATE TABLE meetings(
     location_ VARCHAR(255),
     circuit_short_name VARCHAR(255)
 );
+
+
+CREATE TABLE sessions(
+    session_key INT PRIMARY KEY,
+    meeting_key INT,
+    CONSTRAINT meeting_key FOREIGN KEY (meeting_key)
+    REFERENCES meetings(meeting_key),
+    session_name VARCHAR(255),
+    session_type VARCHAR(255),
+    date_start TIMESTAMP WITH TIME ZONE,
+    date_end TIMESTAMP WITH TIME ZONE
+);

@@ -17,3 +17,13 @@ def insert_meeting(cur, meeting):
         """,
         (meeting["meeting_key"], meeting["year"], meeting["meeting_name"], meeting["country_name"], meeting["location"], meeting["circuit_short_name"])
     )
+
+def insert_session(cur, session):
+    cur.execute(
+        """
+        INSERT INTO sessions (session_key, meeting_key, session_name, session_type, date_start, date_end)
+        VALUES (%s, %s, %s, %s, %s, %s)
+        ON CONFLICT DO NOTHING
+        """,
+        (session["session_key"], session["meeting_key"], session["session_name"], session["session_type"], session["date_start"], session["date_end"])
+    )
