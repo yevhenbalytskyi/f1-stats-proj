@@ -7,6 +7,7 @@ def get_meetings(year: int):
     url = f"{BASE_URL}/meetings?year={year}"
     return requests.get(url).json()
 
+
 def get_sessions(year: int):
     url = f"{BASE_URL}/sessions?year={year}"
     return requests.get(url).json()
