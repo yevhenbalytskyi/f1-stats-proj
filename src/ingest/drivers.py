@@ -3,8 +3,8 @@ from db.connection import get_connection
 from db.repositories import insert_driver
 
 
-def ingest_drivers(session_key):
-    drivers = get_drivers(session_key)
+def ingest_drivers():
+    drivers = get_drivers()
 
     conn = get_connection()
     cur = conn.cursor()

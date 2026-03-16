@@ -1,6 +1,6 @@
 CREATE TABLE drivers(
     driver_id SERIAL PRIMARY KEY,
-    driver_number INT,
+    driver_number INT UNIQUE,
     full_name VARCHAR(255),
     first_name VARCHAR(255),
     last_name VARCHAR(255),

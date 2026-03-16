@@ -13,11 +13,11 @@ def get_sessions():
     return requests.get(url).json()
 
 
-def get_drivers(session_key: int):
-    url = f"{BASE_URL}/drivers?session_key={session_key}"
+def get_drivers():
+    url = f"{BASE_URL}/drivers?session_key=latest"
     return requests.get(url).json()
 
 
-def get_laps(session_key: int):
-    url = f"{BASE_URL}/laps?session_key={session_key}"
+def get_pits():
+    url = f"{BASE_URL}/pit"
     return requests.get(url).json()
