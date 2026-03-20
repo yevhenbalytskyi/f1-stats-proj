@@ -1,7 +1,8 @@
 CREATE TABLE drivers(
     id SERIAL PRIMARY KEY,
     driver_number INT,
-    full_name VARCHAR(255) UNIQUE,
+    session_key INT,
+    full_name VARCHAR(255),
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     name_acronym VARCHAR(10)

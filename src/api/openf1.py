@@ -14,10 +14,10 @@ def get_sessions():
 
 
 def get_drivers():
-    url = f"{BASE_URL}/drivers?session_key=latest"
+    url = f"{BASE_URL}/drivers"
     return requests.get(url).json()
 
 
 def get_pits():
-    url = f"{BASE_URL}/pit?session_key=latest"
+    url = f"{BASE_URL}/pit"
     return requests.get(url).json()

@@ -1,11 +1,11 @@
 def insert_driver(cur, driver):
     cur.execute(
         """
-        INSERT INTO drivers (driver_number, full_name, first_name, last_name, name_acronym)
-        VALUES (%s, %s, %s, %s, %s)
+        INSERT INTO drivers (driver_number, session_key, full_name, first_name, last_name, name_acronym)
+        VALUES (%s, %s, %s, %s, %s, %s)
         ON CONFLICT DO NOTHING
         """,
-        (driver["driver_number"], driver["full_name"], driver["first_name"], driver["last_name"], driver["name_acronym"])
+        (driver["driver_number"], driver["session_key"], driver["full_name"], driver["first_name"], driver["last_name"], driver["name_acronym"])
     )
 
 def insert_meeting(cur, meeting):
