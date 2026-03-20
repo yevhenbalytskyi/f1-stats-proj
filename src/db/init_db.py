@@ -6,9 +6,10 @@ def init_db():
 
     cur.execute(
         """
-        DROP TABLE sessions;
-        DROP TABLE meetings;
-        DROP TABLE drivers;
+        DROP TABLE meetings CASCADE;
+        DROP TABLE sessions CASCADE;
+        DROP TABLE drivers CASCADE;
+        DROP TABLE pit_stops CASCADE;
         """
     )
 

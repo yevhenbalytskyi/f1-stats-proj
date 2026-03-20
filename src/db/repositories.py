@@ -27,3 +27,13 @@ def insert_session(cur, session):
         """,
         (session["session_key"], session["meeting_key"], session["session_name"], session["session_type"], session["date_start"], session["date_end"])
     )
+
+def insert_pit_stop(cur, pit_stop):
+    cur.execute(
+        """
+        INSERT INTO pit_stops (session_key, driver_number, lap_number, lane_duration, stop_duration)
+        VALUES (%s, %s, %s, %s, %s)
+        ON CONFLICT DO NOTHING
+        """,
+        (pit_stop["session_key"],  pit_stop["driver_number"], pit_stop["lap_number"], pit_stop["lane_duration"], pit_stop["stop_duration"])
+    )

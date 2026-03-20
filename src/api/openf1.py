@@ -19,5 +19,5 @@ def get_drivers():
 
 
 def get_pits():
-    url = f"{BASE_URL}/pit"
+    url = f"{BASE_URL}/pit?session_key=latest"
     return requests.get(url).json()

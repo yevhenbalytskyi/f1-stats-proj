@@ -1,7 +1,7 @@
 CREATE TABLE drivers(
-    driver_id SERIAL PRIMARY KEY,
-    driver_number INT UNIQUE,
-    full_name VARCHAR(255),
+    id SERIAL PRIMARY KEY,
+    driver_number INT,
+    full_name VARCHAR(255) UNIQUE,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     name_acronym VARCHAR(10)
@@ -26,4 +26,14 @@ CREATE TABLE sessions(
     session_type VARCHAR(255),
     date_start TIMESTAMP WITH TIME ZONE,
     date_end TIMESTAMP WITH TIME ZONE
+);
+
+
+CREATE TABLE pit_stops(
+    pit_stop_id SERIAL PRIMARY KEY,
+    session_key INT REFERENCES sessions(session_key),
+    driver_number INT,
+    lap_number INT,
+    lane_duration FLOAT,
+    stop_duration FLOAT
 );
